@@ -1,0 +1,37 @@
+
+<div class="grid justify-center mt-3 gap-2"> 
+<div class="card w-96 bg-base-100 shadow-2xl shadow-black">
+    <div class="card-body">
+      <h2 class="card-title font-bold uppercase justify-center">CITA <span class=" text-primary"> TRATAMIENTO</span> </h2>
+     <div class="grid">
+      <label for="">Nombre del tratamiento:</label>
+      <input class="input input-primary mb-2" type="text" placeholder="Ejemplo: alopurinol tabletas" [(ngModel)]="currentTratamiento.nombre" >
+        <label for="">Descripción:</label>
+      <textarea class="textarea  textarea-primary  mb-2" placeholder="Ejemplo: tomarse  1 vez al dia" [(ngModel)]="currentTratamiento.descripcion"></textarea>
+
+      <label for="">Fecha:</label>
+      <input class="input input-primary mb-2" type="date" name="" id="" [(ngModel)]="currentTratamiento.fecha">
+     </div>
+      <div class="card-actions justify-center">
+        <a href="/layout/dashboard" class="btn btn-primary">Cancelar</a>
+        <a href="/tratamiento" class="btn btn-secondary" (click)="save()">Guardar</a>
+      </div>
+    </div>
+  </div>
+  <div class="card w-96 bg-base-100 shadow-2xl shadow-black">
+    <div class="card-body"> 
+<div class="card-title justify-center"> ¿Eliminar tratamiento?</div>
+    </div>
+  
+      <p class="text-xs p-1 ml-3">Recuerde que luego de eliminar no podrá recuperar los datos del tratamiento.</p>
+   
+  <div class="card-actions justify-center">
+    <a href="/tratamiento" class="btn btn-outline btn-error btn-sm m-1.5" (click)="delete()">Eliminar</a>
+
+  </div>
+
+  </div>
+</div>
+
+
+

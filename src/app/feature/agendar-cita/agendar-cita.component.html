@@ -1,0 +1,52 @@
+<div>
+  <h1 class="text-center my-4 shadow-lg">
+    <span class="text-primary font-bold">Agendar cita medica</span>
+  </h1>
+</div>
+
+<div class="grid grid-cols-6 gap-2 text-sm text-center">
+
+  <div class="col-span-2 shadow-lg">
+    <div class="card">
+      <div class="card card-title">Crear cita</div>
+      <div class="grid grid-cols-2 card-body form-control">
+        <label class="label" for="NoCita">No cita:</label>
+        <input class="input input-primary" type="text" name="No cita" id="" [(ngModel)]="agendarCitaActual.noCita">
+        <label class="label" for="Fecha">Fecha:</label>
+        <input class="input input-primary" type="date" name="Fecha" id="" [(ngModel)]="agendarCitaActual.fecha">
+        <label class="label" for="Hora">Hora:</label>
+        <input class="input input-primary" type="time" name="Hora" id="" [(ngModel)]="agendarCitaActual.hora">
+
+      </div>
+
+      
+      <div class="card-actions m-2">
+        <button class="btn btn-primary"  (click)="save(agendarCitaActual)">Confirmar</button>
+        <button class="btn btn-danger"  (click)="deleteById(agendarCitaActual.citaId)">Eliminar</button>
+      </div>
+        <br>
+        <div class="alert shadow-lg alert-success">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6 " fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>¡Cita creada exitosamente!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-4 shadow-lg">
+    <div class="border rounded-sm shadow-lg">
+      <p class="bg-neutral text-neutral-content rounded-sm" >Historial</p>
+
+
+      <ul class="menu bg-base-100">
+          <li class="hover: bg accent-slate-500 active border border-primary mb-2 rounded-md m-4"
+          *ngFor="let agendarCita of listadoAgendarCitas"
+           (click)="seleccionaragendarCita(agendarCita)"
+           [class.active]="agendarCita==agendarCitaActual">
+            <a>{{agendarCita.fecha}} {{agendarCita.hora}}</a>
+          </li>
+        </ul>
+      </div>
+
+</div>

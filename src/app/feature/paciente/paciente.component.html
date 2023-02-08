@@ -1,0 +1,39 @@
+<div class="grid justify-center mt-4 gap-2">
+  <div class="card card-compact bg-base-100 shadow-2xl shadow-black">
+    <div class="card-body">
+      <h2 class="card-title justify-center font-bold uppercase">Datos del <span class="text-primary">Paciente</span></h2>
+      <div class="grid">
+        <label for="">Nombre:</label>
+        <input class="input input-primary mb-2" type="text" placeholder="Ejemplo: Vanessa" [(ngModel)]="currentPaciente.nombre">
+        <label for="">Apellido:</label>
+        <input class="input input-primary mb-2" type="text" placeholder="Ejemplo: Herrera" [(ngModel)]="currentPaciente.apellido">
+        <label for="">Identificacion:</label>
+        <input class="input input-primary" type="text" placeholder="Ejemplo: 1724343435" [(ngModel)]="currentPaciente.identificacion">
+        <label for="">Curso:</label>
+        <input class="input input-primary" type="text" placeholder="Ejemplo: quinto" >
+        <label for="">Carrera:</label>
+        <input class="input input-primary" type="text" placeholder="Ejemplo: marketing" [(ngModel)]="currentPaciente.carrera">
+        <div class="flex flex-col">
+          <div class="form-control w-52">
+            <label class="cursor-pointer label justify-start">
+              <input type="checkbox" class="toggle toggle-primary" checked />
+              <span class="label-text ml-4">Activo</span>
+            </label>
+          </div>
+      </div>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary btn-sm" (click)="save()">Guardar</button>
+        <a  href="/layout/dashboard"  class="btn btn-secondary btn-sm ">Cancelar</a>
+      </div>
+    </div>
+  </div>
+  <div class="card card-compact bg-red-200 shadow-2xl shadow-black">
+    <div class="card-body">
+      <div class="card-tittle">Zona de peligro</div>
+    </div>
+    <p class="text-xs p-4">Recuerde que luego de la eliminacion no podra recuperar los datos</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-danger btn-sm m-4" (click)="delete()">Eliminar</button>
+    </div>
+  </div>
+</div>
